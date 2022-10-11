@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    env_file: .env
+    restart: always
+    command: go run main.go
+    ports:
+      - "8080:8080"
