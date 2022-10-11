@@ -156,3 +156,19 @@ func main() {
   router.Run("0.0.0.0:8006")
 }
 ```
+
+---
+## Run project
+- install go
+```text
+ sudo apt install golang-go
+```
+- Dev
+```text
+go run main.go
+```
+- Prod
+```text
+docker-compose build
+docker-compose up -d
+```
