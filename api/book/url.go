@@ -6,12 +6,12 @@ import (
 )
 
 func ApplyRoutes(r *gin.RouterGroup) {
-	auth := r.Group("v1/book", core.AuthMiddleware())
+	book := r.Group("v1/book", core.AuthMiddleware())
 	{
-		auth.GET("/", bookApiController{}.GetBook)
-		auth.POST("/", bookApiController{}.CreateBook)
-		auth.GET("/:id", bookApiController{}.RetrieveBook)
-		auth.PUT("/:id", bookApiController{}.UpdateBook)
-		auth.DELETE("/:id", bookApiController{}.DeleteBook)
+		book.GET("/", bookApiController{}.GetBook)
+		book.POST("/", bookApiController{}.CreateBook)
+		book.GET("/:id", bookApiController{}.RetrieveBook)
+		book.PUT("/:id", bookApiController{}.UpdateBook)
+		book.DELETE("/:id", bookApiController{}.DeleteBook)
 	}
 }
